@@ -1,0 +1,15 @@
+/* Remove number input arrows in Chrome, Safari, Edge, and Opera */
+.no-spinner {
+    -webkit-appearance: none; /* For WebKit browsers */
+    -moz-appearance: textfield; /* For Firefox */
+    appearance: none; /* Standard property for better compatibility */
+  }
+  
+  /* Remove number input arrows in Chrome, Safari, Edge */
+  .no-spinner::-webkit-outer-spin-button,
+  .no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  

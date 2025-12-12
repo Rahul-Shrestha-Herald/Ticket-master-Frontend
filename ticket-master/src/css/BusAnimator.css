@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.highway {
+    height: 180px;
+    width: 500%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-repeat: repeat-x;
+    z-index: 1;
+    animation: highway 5s linear infinite;
+}
+
+@keyframes highway {
+    100% {
+        transform: translateX(-1400px);
+    }
+}
+
+.city {
+    height: 450px;
+    width: 500%;
+    position: absolute;
+    bottom: 180px;
+    left: 0;
+    background-repeat: repeat-x;
+    z-index: 1;
+    animation: city 10s linear infinite;
+}
+
+@keyframes city {
+    100% {
+        transform: translateX(-600px);
+    }
+}
+
+/* Bus */
+.bus {
+    width: 400px;
+    height: auto;
+    position: absolute;
+    bottom: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* Bus Image */
+.bus img {
+    width: 100%;
+    animation: bus 2s linear infinite;
+}
+
+@keyframes bus {
+    100% {
+        transform: translateX(1px);
+    }
+
+    50% {
+        transform: translateX(1px);
+    }
+
+    0% {
+        transform: translateX(1px);
+    }
+}
+
+/* Wheels */
+.wheel {
+    position: absolute;
+    bottom: 63px;
+    left: 100%;
+    transform: translateX(-50%);
+    z-index: 3;
+    width: 100%;
+}
+
+.frontwheel {
+    position: absolute;
+    left: 43px;
+}
+
+.backwheel {
+    position: absolute;
+    left: -115px;
+}
+
+.wheel img {
+    width: 40px;
+    height: 40px;
+    animation: wheel 1s linear infinite;
+}
+
+@keyframes wheel {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.text-center {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.relative.z-20 {
+    position: relative;
+    z-index: 20;
+}
