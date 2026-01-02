@@ -430,193 +430,193 @@ const OperatorLiveTracking = () => {
         return new Date(timestamp).toLocaleTimeString();
     };
 
-    // return (
-    //     <OperatorLayout>
-    //         <div className="container mx-auto py-6">
-    //             <h1 className="text-2xl font-bold text-gray-800 mb-6">Live Location Tracking</h1>
+    return (
+        <OperatorLayout>
+            <div className="container mx-auto py-6">
+                <h1 className="text-2xl font-bold text-gray-800 mb-6">Live Location Tracking</h1>
 
-    //             {trackingError && (
-    //                 <div className="bg-red-50 text-red-600 p-4 rounded-lg mb-6">
-    //                     <p>{trackingError}</p>
-    //                 </div>
-    //             )}
+                {trackingError && (
+                    <div className="bg-red-50 text-red-600 p-4 rounded-lg mb-6">
+                        <p>{trackingError}</p>
+                    </div>
+                )}
 
-    //             {!isConnected && (
-    //                 <div className="bg-yellow-50 text-yellow-700 p-4 rounded-lg mb-6">
-    //                     <p className="flex items-center">
-    //                         <FaInfoCircle className="mr-2" />
-    //                         Not connected to tracking server. Attempting to reconnect...
-    //                     </p>
-    //                 </div>
-    //             )}
+                {!isConnected && (
+                    <div className="bg-yellow-50 text-yellow-700 p-4 rounded-lg mb-6">
+                        <p className="flex items-center">
+                            <FaInfoCircle className="mr-2" />
+                            Not connected to tracking server. Attempting to reconnect...
+                        </p>
+                    </div>
+                )}
 
-    //             {isTracking ? (
-    //                 <div className="bg-white rounded-xl shadow-md p-6">
-    //                     <div className="flex justify-between items-start mb-4">
-    //                         <div>
-    //                             <h1 className="text-2xl font-bold text-gray-800 mb-2">Bus Location Management</h1>
-    //                             <h2 className="text-lg text-green-600">
-    //                                 Actively sharing location for {selectedBus?.busName || selectedBus?.name || 'Unknown Bus'}
-    //                                 {selectedBus?.busNumber ? ` (${selectedBus.busNumber})` : ''}
-    //                             </h2>
-    //                         </div>
-    //                         <button
-    //                             onClick={handleStopTracking}
-    //                             className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg flex items-center"
-    //                         >
-    //                             <FaStopCircle className="mr-2" />
-    //                             Stop Sharing Location
-    //                         </button>
-    //                     </div>
+                {isTracking ? (
+                    <div className="bg-white rounded-xl shadow-md p-6">
+                        <div className="flex justify-between items-start mb-4">
+                            <div>
+                                <h1 className="text-2xl font-bold text-gray-800 mb-2">Bus Location Management</h1>
+                                <h2 className="text-lg text-green-600">
+                                    Actively sharing location for {selectedBus?.busName || selectedBus?.name || 'Unknown Bus'}
+                                    {selectedBus?.busNumber ? ` (${selectedBus.busNumber})` : ''}
+                                </h2>
+                            </div>
+                            <button
+                                onClick={handleStopTracking}
+                                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg flex items-center"
+                            >
+                                <FaStopCircle className="mr-2" />
+                                Stop Sharing Location
+                            </button>
+                        </div>
 
-    //                     <div className="mt-4">
-    //                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-    //                             <div>
-    //                                 <div className="bg-gray-50 p-4 rounded-lg">
-    //                                     <h3 className="font-semibold text-gray-700 mb-3">Bus Information</h3>
-    //                                     <div className="space-y-2">
-    //                                         <div>
-    //                                             <span className="text-gray-600 text-sm block">Bus Name:</span>
-    //                                             <p className="font-medium">
-    //                                                 {selectedBus?.busName || selectedBus?.name || 'Unknown'}
-    //                                                 {selectedBus?.busNumber ? ` (${selectedBus.busNumber})` : ''}
-    //                                             </p>
-    //                                         </div>
-    //                                         <div>
-    //                                             <span className="text-gray-600 text-sm block">Status:</span>
-    //                                             <p className="font-medium text-green-600">Location sharing active</p>
-    //                                         </div>
-    //                                     </div>
-    //                                 </div>
-    //                             </div>
+                        <div className="mt-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <div className="bg-gray-50 p-4 rounded-lg">
+                                        <h3 className="font-semibold text-gray-700 mb-3">Bus Information</h3>
+                                        <div className="space-y-2">
+                                            <div>
+                                                <span className="text-gray-600 text-sm block">Bus Name:</span>
+                                                <p className="font-medium">
+                                                    {selectedBus?.busName || selectedBus?.name || 'Unknown'}
+                                                    {selectedBus?.busNumber ? ` (${selectedBus.busNumber})` : ''}
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <span className="text-gray-600 text-sm block">Status:</span>
+                                                <p className="font-medium text-green-600">Location sharing active</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-    //                             {currentLocation && (
-    //                                 <div className="bg-white p-4 rounded-lg border border-gray-200">
-    //                                     <h3 className="font-semibold text-gray-700 mb-3">Current Location</h3>
-    //                                     <div className="grid grid-cols-1 gap-4">
-    //                                         <div>
-    //                                             <span className="text-gray-600 text-sm block">Coordinates:</span>
-    //                                             <p className="font-medium">
-    //                                                 {currentLocation.latitude.toFixed(6)}, {currentLocation.longitude.toFixed(6)}
-    //                                             </p>
-    //                                         </div>
+                                {currentLocation && (
+                                    <div className="bg-white p-4 rounded-lg border border-gray-200">
+                                        <h3 className="font-semibold text-gray-700 mb-3">Current Location</h3>
+                                        <div className="grid grid-cols-1 gap-4">
+                                            <div>
+                                                <span className="text-gray-600 text-sm block">Coordinates:</span>
+                                                <p className="font-medium">
+                                                    {currentLocation.latitude.toFixed(6)}, {currentLocation.longitude.toFixed(6)}
+                                                </p>
+                                            </div>
 
-    //                                         <div>
-    //                                             <span className="text-gray-600 text-sm block">Speed:</span>
-    //                                             <p className="font-medium">
-    //                                                 {currentLocation && currentLocation.speed !== undefined ? `${(currentLocation.speed || 0).toFixed(1)} km/h` : '0 km/h'}
-    //                                             </p>
-    //                                         </div>
+                                            <div>
+                                                <span className="text-gray-600 text-sm block">Speed:</span>
+                                                <p className="font-medium">
+                                                    {currentLocation && currentLocation.speed !== undefined ? `${(currentLocation.speed || 0).toFixed(1)} km/h` : '0 km/h'}
+                                                </p>
+                                            </div>
 
-    //                                         <div>
-    //                                             <span className="text-gray-600 text-sm block">Last Updated:</span>
-    //                                             <p className="font-medium">
-    //                                                 {new Date().toLocaleTimeString()}
-    //                                             </p>
-    //                                         </div>
-    //                                     </div>
-    //                                 </div>
-    //                             )}
-    //                         </div>
-    //                     </div>
+                                            <div>
+                                                <span className="text-gray-600 text-sm block">Last Updated:</span>
+                                                <p className="font-medium">
+                                                    {new Date().toLocaleTimeString()}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
 
-    //                     <div className="mt-6 text-sm text-gray-600">
-    //                         <p>Your location is being shared in real-time with passengers who have verified bookings for this bus. Make sure to stop sharing when your journey is complete.</p>
-    //                     </div>
+                        <div className="mt-6 text-sm text-gray-600">
+                            <p>Your location is being shared in real-time with passengers who have verified bookings for this bus. Make sure to stop sharing when your journey is complete.</p>
+                        </div>
 
-    //                     {/* Debug info section */}
-    //                     <div className="mt-6 pt-5 border-t border-gray-200">
-    //                         <details className="text-sm">
-    //                             <summary className="font-medium text-gray-700 cursor-pointer">Connection Details (Debug)</summary>
-    //                             <div className="mt-2 p-3 bg-gray-50 rounded">
-    //                                 <p><span className="font-medium">Socket Connected:</span> {isConnected ? 'Yes' : 'No'}</p>
-    //                                 <p><span className="font-medium">Tracking Active:</span> {isTracking ? 'Yes' : 'No'}</p>
-    //                                 <p><span className="font-medium">Bus ID:</span> {selectedBus?._id || busId || 'None'}</p>
-    //                                 <p><span className="font-medium">Location Interval Active:</span> {watchIdRef.current ? 'Yes' : 'No'}</p>
-    //                                 <p><span className="font-medium">Update Frequency:</span> Every {updateFrequency} seconds</p>
-    //                                 <div className="mt-2">
-    //                                     <button
-    //                                         onClick={handleStopTracking}
-    //                                         className="px-3 py-1 bg-red-100 text-red-700 text-xs rounded hover:bg-red-200"
-    //                                     >
-    //                                         Stop Tracking
-    //                                     </button>
-    //                                 </div>
-    //                             </div>
-    //                         </details>
-    //                     </div>
-    //                 </div>
-    //             ) : (
-    //                 <div className="bg-white rounded-lg shadow-md mb-6">
-    //                     <div className="p-6 border-b">
-    //                         <h2 className="text-xl font-semibold">Verified Buses</h2>
-    //                         <p className="text-gray-600">Select a bus to start sharing its location</p>
-    //                     </div>
+                        {/* Debug info section */}
+                        <div className="mt-6 pt-5 border-t border-gray-200">
+                            <details className="text-sm">
+                                <summary className="font-medium text-gray-700 cursor-pointer">Connection Details (Debug)</summary>
+                                <div className="mt-2 p-3 bg-gray-50 rounded">
+                                    <p><span className="font-medium">Socket Connected:</span> {isConnected ? 'Yes' : 'No'}</p>
+                                    <p><span className="font-medium">Tracking Active:</span> {isTracking ? 'Yes' : 'No'}</p>
+                                    <p><span className="font-medium">Bus ID:</span> {selectedBus?._id || busId || 'None'}</p>
+                                    <p><span className="font-medium">Location Interval Active:</span> {watchIdRef.current ? 'Yes' : 'No'}</p>
+                                    <p><span className="font-medium">Update Frequency:</span> Every {updateFrequency} seconds</p>
+                                    <div className="mt-2">
+                                        <button
+                                            onClick={handleStopTracking}
+                                            className="px-3 py-1 bg-red-100 text-red-700 text-xs rounded hover:bg-red-200"
+                                        >
+                                            Stop Tracking
+                                        </button>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="bg-white rounded-lg shadow-md mb-6">
+                        <div className="p-6 border-b">
+                            <h2 className="text-xl font-semibold">Verified Buses</h2>
+                            <p className="text-gray-600">Select a bus to start sharing its location</p>
+                        </div>
 
-    //                     {loading ? (
-    //                         <div className="p-6 flex justify-center">
-    //                             <LoadingSpinner />
-    //                         </div>
-    //                     ) : buses.length === 0 ? (
-    //                         <div className="p-6">
-    //                             <div className="text-center text-gray-500">
-    //                                 <FaBus className="mx-auto text-4xl mb-3 text-gray-300" />
-    //                                 <p>No verified buses found. Please verify your buses first.</p>
-    //                             </div>
+                        {loading ? (
+                            <div className="p-6 flex justify-center">
+                                <LoadingSpinner />
+                            </div>
+                        ) : buses.length === 0 ? (
+                            <div className="p-6">
+                                <div className="text-center text-gray-500">
+                                    <FaBus className="mx-auto text-4xl mb-3 text-gray-300" />
+                                    <p>No verified buses found. Please verify your buses first.</p>
+                                </div>
 
-    //                             {apiResponse && (
-    //                                 <div className="mt-4 p-4 bg-gray-50 rounded-lg text-sm">
-    //                                     <h3 className="font-medium mb-2">Debugging Information:</h3>
-    //                                     <p>Received {Array.isArray(apiResponse) ? apiResponse.length : 'unknown'} bus records</p>
-    //                                     <p className="mt-2">Check the browser console for detailed response data</p>
-    //                                 </div>
-    //                             )}
-    //                         </div>
-    //                     ) : (
-    //                         <div className="overflow-x-auto">
-    //                             <table className="w-full">
-    //                                 <thead className="bg-gray-50">
-    //                                     <tr>
-    //                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-    //                                             Bus Name
-    //                                         </th>
-    //                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-    //                                             Bus Number
-    //                                         </th>
-    //                                         <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-    //                                             Action
-    //                                         </th>
-    //                                     </tr>
-    //                                 </thead>
-    //                                 <tbody className="bg-white divide-y divide-gray-200">
-    //                                     {buses.map((bus) => (
-    //                                         <tr key={bus._id} className="hover:bg-gray-50">
-    //                                             <td className="px-6 py-4 whitespace-nowrap">
-    //                                                 <div className="font-medium text-gray-900">{bus.busName || bus.name}</div>
-    //                                             </td>
-    //                                             <td className="px-6 py-4 whitespace-nowrap">
-    //                                                 <div className="text-sm text-gray-900">{bus.busNumber || bus.number}</div>
-    //                                             </td>
-    //                                             <td className="px-6 py-4 whitespace-nowrap">
-    //                                                 <button
-    //                                                     onClick={() => handleStartTracking(bus)}
-    //                                                     className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg flex items-center"
-    //                                                 >
-    //                                                     <FaLocationArrow className="mr-2" />
-    //                                                     Share Location
-    //                                                 </button>
-    //                                             </td>
-    //                                         </tr>
-    //                                     ))}
-    //                                 </tbody>
-    //                             </table>
-    //                         </div>
-    //                     )}
-    //                 </div>
-    //             )}
-    //         </div>
-    //     </OperatorLayout>
-    // );
+                                {apiResponse && (
+                                    <div className="mt-4 p-4 bg-gray-50 rounded-lg text-sm">
+                                        <h3 className="font-medium mb-2">Debugging Information:</h3>
+                                        <p>Received {Array.isArray(apiResponse) ? apiResponse.length : 'unknown'} bus records</p>
+                                        <p className="mt-2">Check the browser console for detailed response data</p>
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <div className="overflow-x-auto">
+                                <table className="w-full">
+                                    <thead className="bg-gray-50">
+                                        <tr>
+                                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Bus Name
+                                            </th>
+                                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Bus Number
+                                            </th>
+                                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white divide-y divide-gray-200">
+                                        {buses.map((bus) => (
+                                            <tr key={bus._id} className="hover:bg-gray-50">
+                                                <td className="px-6 py-4 whitespace-nowrap">
+                                                    <div className="font-medium text-gray-900">{bus.busName || bus.name}</div>
+                                                </td>
+                                                <td className="px-6 py-4 whitespace-nowrap">
+                                                    <div className="text-sm text-gray-900">{bus.busNumber || bus.number}</div>
+                                                </td>
+                                                <td className="px-6 py-4 whitespace-nowrap">
+                                                    <button
+                                                        onClick={() => handleStartTracking(bus)}
+                                                        className="bg-primary hover:bg-primary/80 text-white px-4 py-2 rounded-lg flex items-center"
+                                                    >
+                                                        <FaLocationArrow className="mr-2" />
+                                                        Share Location
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        )}
+                    </div>
+                )}
+            </div>
+        </OperatorLayout>
+    );
 };
 
 export default OperatorLiveTracking; 
