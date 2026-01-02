@@ -34,9 +34,9 @@ const Navbar = () => {
     //Navbar items
     const navItems = [
         { label: "Home", link: "/" },
-        { label: "Tickets", link: "/bus-tickets" },
-        { label: "About", link: "/about" },
-        { label: "Live Tracking", link: "/live-tracking" },
+        { label: "Tickets", link: "/bus-ticket" },
+        { label: "About", link: "/abou" },
+        { label: "Live Tracking", link: "/live-trackin" },
         { label: "Operator", link: "/operator" }
     ]
 

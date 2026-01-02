@@ -16,6 +16,7 @@
     overflow: hidden;
 }
 
+/* Highway */
 .highway {
     height: 180px;
     width: 500%;
@@ -24,15 +25,11 @@
     left: 0;
     background-repeat: repeat-x;
     z-index: 1;
-    animation: highway 5s linear infinite;
+    /* animation stopped */
+    animation: none;
 }
 
-@keyframes highway {
-    100% {
-        transform: translateX(-1400px);
-    }
-}
-
+/* City */
 .city {
     height: 450px;
     width: 500%;
@@ -41,13 +38,8 @@
     left: 0;
     background-repeat: repeat-x;
     z-index: 1;
-    animation: city 10s linear infinite;
-}
-
-@keyframes city {
-    100% {
-        transform: translateX(-600px);
-    }
+    /* animation stopped */
+    animation: none;
 }
 
 /* Bus */
@@ -64,21 +56,8 @@
 /* Bus Image */
 .bus img {
     width: 100%;
-    animation: bus 2s linear infinite;
-}
-
-@keyframes bus {
-    100% {
-        transform: translateX(1px);
-    }
-
-    50% {
-        transform: translateX(1px);
-    }
-
-    0% {
-        transform: translateX(1px);
-    }
+    /* animation stopped */
+    animation: none;
 }
 
 /* Wheels */
@@ -104,15 +83,11 @@
 .wheel img {
     width: 40px;
     height: 40px;
-    animation: wheel 1s linear infinite;
+    /* animation stopped */
+    animation: none;
 }
 
-@keyframes wheel {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
+/* Text */
 .text-center {
     position: relative;
     z-index: 10;
