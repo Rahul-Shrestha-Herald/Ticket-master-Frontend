@@ -1,0 +1,73 @@
+/* Additional styling for Leaflet maps */
+
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border-radius: 0.5rem;
+    z-index: 1;
+}
+
+.leaflet-control-zoom {
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+.leaflet-control-zoom a {
+    border-radius: 4px !important;
+    background-color: white;
+}
+
+.leaflet-control-zoom a:hover {
+    background-color: #f1f1f1;
+}
+
+.leaflet-control-attribution {
+    background: rgba(255, 255, 255, 0.8) !important;
+    padding: 2px 6px !important;
+    font-size: 10px !important;
+}
+
+.bus-marker-popup .leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.bus-marker-popup .leaflet-popup-content {
+    margin: 0;
+    padding: 12px;
+    min-width: 180px;
+}
+
+.bus-marker-popup .leaflet-popup-tip {
+    background: white;
+}
+
+.leaflet-popup-content p {
+    margin: 4px 0;
+}
+
+.map-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.map-loading-icon {
+    font-size: 2.5rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.map-loading-text {
+    font-size: 0.875rem;
+    color: #666;
+    text-align: center;
+}
